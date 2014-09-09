@@ -1,0 +1,20 @@
+create plots:
+  help: create plots of medal counts for top countries
+  dependencies:
+    - Data/olympic-medals.csv
+    - make_plots.R
+  formula: >
+    Rscript make_plots.R
+  output:
+    - Output/winter_medals.pdf 
+    - Output/summer_medals.pdf
+
+build model:
+  help: run a flimsy OLS regression model
+  dependencies: 
+    - Data/olympic-medals.csv
+    - build_model.R
+  formula: >
+    Rscript build_model.R
+  output: 
+    - Output/medal_model.docx
